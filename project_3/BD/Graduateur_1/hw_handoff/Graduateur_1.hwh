@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Mar  5 12:17:09 2021" VIVADOVERSION="2019.1">
+
+  <SYSTEMINFO ARCH="zynq" BOARD="em.avnet.com:zed:part0:1.4" DEVICE="7z020" NAME="Graduateur_1" PACKAGE="clg484" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="I" NAME="rst" SIGIS="rst" SIGNAME="External_Ports_rst">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Compteur_0" PORT="rst"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="50000000" DIR="I" NAME="CLK" SIGIS="clk" SIGNAME="External_Ports_CLK">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Compteur_0" PORT="Fosc"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" LEFT="7" NAME="Seuil" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_Seuil">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Comparateur_0" PORT="B"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="MLI" SIGIS="undef" SIGNAME="Comparateur_0_A_inf_B">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Comparateur_0" PORT="A_inf_B"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="A" RIGHT="0" SIGIS="undef" SIGNAME="Compteur_0_Q">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Compteur_0" PORT="Q"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES>
+    <MODULE COREREVISION="1" FULLNAME="/Comparateur_0" HWVERSION="1.0" INSTANCE="Comparateur_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Comparateur" VLNV="xilinx.com:module_ref:Comparateur:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="N" VALUE="8"/>
+        <PARAMETER NAME="Component_Name" VALUE="Graduateur_1_Comparateur_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="7" NAME="A" RIGHT="0" SIGIS="undef" SIGNAME="Compteur_0_Q">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Compteur_0" PORT="Q"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="7" NAME="B" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_Seuil">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="Seuil"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="A_inf_B" SIGIS="undef" SIGNAME="Comparateur_0_A_inf_B">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="MLI"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/Compteur_0" HWVERSION="1.0" INSTANCE="Compteur_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Compteur" VLNV="xilinx.com:module_ref:Compteur:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="N" VALUE="8"/>
+        <PARAMETER NAME="Component_Name" VALUE="Graduateur_1_Compteur_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="Fosc" SIGIS="undef" SIGNAME="External_Ports_CLK">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CLK"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="rst" SIGIS="rst" SIGNAME="External_Ports_rst">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="rst"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="7" NAME="Q" RIGHT="0" SIGIS="undef" SIGNAME="Compteur_0_Q">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Comparateur_0" PORT="A"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="A"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

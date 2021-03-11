@@ -1,0 +1,30 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "comment_0":"Projet Gradateur",
+   "commentid":"comment_0|",
+   "font_comment_0":"10",
+   "guistr":"# # String gsaved with Nlview 7.0.19  2019-03-26 bk=1.5019 VDI=41 GEI=35 GUI=JA:9.0 non-TLS-threadsafe
+#  -string -flagsOSRD
+preplace port rst -pg 1 -lvl 0 -x -100 -y -10 -defaultsOSRD
+preplace port CLK -pg 1 -lvl 0 -x -100 -y -40 -defaultsOSRD
+preplace port MLI -pg 1 -lvl 3 -x 490 -y 50 -defaultsOSRD
+preplace portBus Seuil -pg 1 -lvl 0 -x -100 -y 40 -defaultsOSRD
+preplace portBus A -pg 1 -lvl 3 -x 490 -y -50 -defaultsOSRD
+preplace inst Compteur_0 -pg 1 -lvl 1 -x 30 -y -30 -defaultsOSRD
+preplace inst Comparateur_0 -pg 1 -lvl 2 -x 300 -y 30 -defaultsOSRD
+preplace netloc Compteur_0_Q 1 1 2 130 -50 N
+preplace netloc rst_1 1 0 1 -80 -20n
+preplace netloc CLK_1 1 0 1 N -40
+preplace netloc Seuil_1 1 0 2 NJ 40 N
+preplace netloc Comparateur_0_A_inf_B 1 2 1 400 30n
+preplace cgraphic comment_0 place top -136 -129 textcolor 4 linecolor 3 linewidth 2
+levelinfo -pg 1 -100 30 300 490
+pagesize -pg 1 -db -bbox -sgen -210 -130 580 140
+",
+   "linktoobj_comment_0":"/MLI",
+   "linktotype_comment_0":"bd_port"
+}
+
+{
+   "/MLI/comment_0":"comment_0"
+}

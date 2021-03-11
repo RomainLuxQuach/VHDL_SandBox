@@ -1,0 +1,150 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x7A51FA517A51FA51",
+      "device": "xc7z020clg484-1",
+      "name": "design_1",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "Compteur_3bits_0": "",
+      "Encodeur_0": ""
+    },
+    "ports": {
+      "INH": {
+        "direction": "I"
+      },
+      "H": {
+        "direction": "I"
+      },
+      "RAZ": {
+        "direction": "I"
+      },
+      "PA1": {
+        "direction": "O"
+      },
+      "PA2": {
+        "direction": "O"
+      },
+      "PB1": {
+        "direction": "O"
+      },
+      "PB2": {
+        "direction": "O"
+      },
+      "Q": {
+        "direction": "O",
+        "left": "2",
+        "right": "0"
+      }
+    },
+    "components": {
+      "Compteur_3bits_0": {
+        "vlnv": "xilinx.com:module_ref:Compteur_3bits:1.0",
+        "xci_name": "design_1_Compteur_3bits_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Compteur_3bits",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "S": {
+            "direction": "O",
+            "left": "2",
+            "right": "0"
+          },
+          "RAZ": {
+            "direction": "I"
+          },
+          "H": {
+            "direction": "I"
+          }
+        }
+      },
+      "Encodeur_0": {
+        "vlnv": "xilinx.com:module_ref:Encodeur:1.0",
+        "xci_name": "design_1_Encodeur_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Encodeur",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "Q": {
+            "direction": "I",
+            "left": "2",
+            "right": "0"
+          },
+          "PA1": {
+            "direction": "O"
+          },
+          "PA2": {
+            "direction": "O"
+          },
+          "PB1": {
+            "direction": "O"
+          },
+          "PB2": {
+            "direction": "O"
+          },
+          "INH": {
+            "direction": "I"
+          }
+        }
+      }
+    },
+    "nets": {
+      "Compteur_3bits_0_S": {
+        "ports": [
+          "Compteur_3bits_0/S",
+          "Encodeur_0/Q",
+          "Q"
+        ]
+      },
+      "INH_1": {
+        "ports": [
+          "INH",
+          "Encodeur_0/INH"
+        ]
+      },
+      "H_1": {
+        "ports": [
+          "H",
+          "Compteur_3bits_0/H"
+        ]
+      },
+      "RAZ_1": {
+        "ports": [
+          "RAZ",
+          "Compteur_3bits_0/RAZ"
+        ]
+      },
+      "Encodeur_0_PA1": {
+        "ports": [
+          "Encodeur_0/PA1",
+          "PA1"
+        ]
+      },
+      "Encodeur_0_PA2": {
+        "ports": [
+          "Encodeur_0/PA2",
+          "PA2"
+        ]
+      },
+      "Encodeur_0_PB1": {
+        "ports": [
+          "Encodeur_0/PB1",
+          "PB1"
+        ]
+      },
+      "Encodeur_0_PB2": {
+        "ports": [
+          "Encodeur_0/PB2",
+          "PB2"
+        ]
+      }
+    }
+  }
+}

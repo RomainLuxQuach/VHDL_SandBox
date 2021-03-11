@@ -1,0 +1,176 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x6C305C7F5D9420F5",
+      "device": "xc7z020clg484-1",
+      "name": "Graduateur_1",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2019.1",
+      "validated": "true"
+    },
+    "design_tree": {
+      "Compteur_0": "",
+      "Comparateur_0": ""
+    },
+    "ports": {
+      "rst": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_HIGH"
+          }
+        }
+      },
+      "CLK": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "CLK_DOMAIN": {
+            "value": "Graduateur_1_CLK",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "50000000"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      },
+      "Seuil": {
+        "direction": "I",
+        "left": "7",
+        "right": "0"
+      },
+      "MLI": {
+        "direction": "O"
+      },
+      "A": {
+        "direction": "O",
+        "left": "7",
+        "right": "0"
+      }
+    },
+    "components": {
+      "Compteur_0": {
+        "vlnv": "xilinx.com:module_ref:Compteur:1.0",
+        "xci_name": "Graduateur_1_Compteur_0_0",
+        "parameters": {
+          "N": {
+            "value": "8"
+          }
+        },
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Compteur",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "rst": {
+            "type": "rst",
+            "direction": "I",
+            "parameters": {
+              "POLARITY": {
+                "value": "ACTIVE_HIGH"
+              }
+            }
+          },
+          "Fosc": {
+            "direction": "I",
+            "parameters": {
+              "CLK_DOMAIN": {
+                "value": "Graduateur_1_CLK",
+                "value_src": "default_prop"
+              },
+              "FREQ_HZ": {
+                "value": "50000000",
+                "value_src": "user_prop"
+              },
+              "PHASE": {
+                "value": "0.000",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "Q": {
+            "direction": "O",
+            "left": "7",
+            "right": "0"
+          }
+        }
+      },
+      "Comparateur_0": {
+        "vlnv": "xilinx.com:module_ref:Comparateur:1.0",
+        "xci_name": "Graduateur_1_Comparateur_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Comparateur",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "A": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "B": {
+            "direction": "I",
+            "left": "7",
+            "right": "0"
+          },
+          "A_inf_B": {
+            "direction": "O"
+          }
+        }
+      }
+    },
+    "nets": {
+      "Compteur_0_Q": {
+        "ports": [
+          "Compteur_0/Q",
+          "Comparateur_0/A",
+          "A"
+        ]
+      },
+      "rst_1": {
+        "ports": [
+          "rst",
+          "Compteur_0/rst"
+        ]
+      },
+      "CLK_1": {
+        "ports": [
+          "CLK",
+          "Compteur_0/Fosc"
+        ]
+      },
+      "Seuil_1": {
+        "ports": [
+          "Seuil",
+          "Comparateur_0/B"
+        ]
+      },
+      "Comparateur_0_A_inf_B": {
+        "ports": [
+          "Comparateur_0/A_inf_B",
+          "MLI"
+        ]
+      }
+    },
+    "comments": {
+      "/MLI": {
+        "comment_0": "Projet Gradateur"
+      }
+    }
+  }
+}

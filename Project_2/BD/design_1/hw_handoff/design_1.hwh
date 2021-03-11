@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Fri Feb 26 16:03:37 2021" VIVADOVERSION="2019.1">
+
+  <SYSTEMINFO ARCH="zynq" BOARD="em.avnet.com:zed:part0:1.4" DEVICE="7z020" NAME="design_1" PACKAGE="clg484" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="I" NAME="INH" SIGIS="undef" SIGNAME="External_Ports_INH">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Encodeur_0" PORT="INH"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="H" SIGIS="undef" SIGNAME="External_Ports_H">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Compteur_3bits_0" PORT="H"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="I" NAME="RAZ" SIGIS="undef" SIGNAME="External_Ports_RAZ">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Compteur_3bits_0" PORT="RAZ"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="PA1" SIGIS="undef" SIGNAME="Encodeur_0_PA1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Encodeur_0" PORT="PA1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="PA2" SIGIS="undef" SIGNAME="Encodeur_0_PA2">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Encodeur_0" PORT="PA2"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="PB1" SIGIS="undef" SIGNAME="Encodeur_0_PB1">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Encodeur_0" PORT="PB1"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" NAME="PB2" SIGIS="undef" SIGNAME="Encodeur_0_PB2">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Encodeur_0" PORT="PB2"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="2" NAME="Q" RIGHT="0" SIGIS="undef" SIGNAME="Compteur_3bits_0_S">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Compteur_3bits_0" PORT="S"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES>
+    <MODULE COREREVISION="1" FULLNAME="/Compteur_3bits_0" HWVERSION="1.0" INSTANCE="Compteur_3bits_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Compteur_3bits" VLNV="xilinx.com:module_ref:Compteur_3bits:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_Compteur_3bits_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="O" LEFT="2" NAME="S" RIGHT="0" SIGIS="undef" SIGNAME="Compteur_3bits_0_S">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Encodeur_0" PORT="Q"/>
+            <CONNECTION INSTANCE="External_Ports" PORT="Q"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="RAZ" SIGIS="undef" SIGNAME="External_Ports_RAZ">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="RAZ"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="H" SIGIS="undef" SIGNAME="External_Ports_H">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="H"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/Encodeur_0" HWVERSION="1.0" INSTANCE="Encodeur_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Encodeur" VLNV="xilinx.com:module_ref:Encodeur:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_Encodeur_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="2" NAME="Q" RIGHT="0" SIGIS="undef" SIGNAME="Compteur_3bits_0_S">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Compteur_3bits_0" PORT="S"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="PA1" SIGIS="undef" SIGNAME="Encodeur_0_PA1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="PA1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="PA2" SIGIS="undef" SIGNAME="Encodeur_0_PA2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="PA2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="PB1" SIGIS="undef" SIGNAME="Encodeur_0_PB1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="PB1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="PB2" SIGIS="undef" SIGNAME="Encodeur_0_PB2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="PB2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="INH" SIGIS="undef" SIGNAME="External_Ports_INH">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="INH"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>
